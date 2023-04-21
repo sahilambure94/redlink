@@ -55,61 +55,64 @@ class _DonorViewState extends State<DonorView> {
             child: ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (_, index) {
-                return GestureDetector(
-                  onTap: () {
-                    // Navigator.pushReplacement(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (_) => DonorRequestEditView(
-                    //         docid: snapshot.data!.docs[index]),
-                    //   ),
-                    // );
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const BookAppointmentView(),
+                return Column(
+                  children: [
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 3,
+                        right: 3,
                       ),
-                    );
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 3,
-                          right: 3,
-                        ),
-                        child: ListTile(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            side: BorderSide(
-                              color: Colors.black,
-                            ),
-                          ),
-                          title: Text(
-                            snapshot.data!.docChanges[index]
-                                .doc[RedlinkNames.hospitalName],
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          ),
-                          subtitle: Text(
-                            snapshot.data!.docChanges[index]
-                                .doc[RedlinkNames.bloodType],
-                            style: TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 12,
-                            horizontal: 16,
+                      child: ListTile(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          side: BorderSide(
+                            color: Colors.black,
                           ),
                         ),
+                        leading: Text(
+                          snapshot.data!.docChanges[index]
+                              .doc[RedlinkNames.bloodType],
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                        title: Text(
+                          snapshot.data!.docChanges[index]
+                              .doc[RedlinkNames.hospitalName],
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                        subtitle: Text(
+                          "${snapshot.data!.docChanges[index].doc[RedlinkNames.unitsRequired]} units of blood",
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                        trailing: IconButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const BookAppointmentView(),
+                              ),
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.event_available,
+                            color: Colors.black87,
+                          ),
+                        ),
+                        contentPadding: EdgeInsets.symmetric(
+                          vertical: 12,
+                          horizontal: 16,
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 );
               },
             ),
