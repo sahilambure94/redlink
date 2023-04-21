@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:redlink/consts/firebase_doc_const.dart';
-import 'package:redlink/screens/donor_request_edit_view.dart';
+import 'package:redlink/screens/book_appointment_view.dart';
 import 'package:redlink/screens/donor_request_view.dart';
 
 class DonorView extends StatefulWidget {
@@ -18,19 +18,19 @@ class _DonorViewState extends State<DonorView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (_) => DonorRequestView(),
-            ),
-          );
-        },
-        child: const Icon(
-          Icons.add,
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.pushReplacement(
+      //       context,
+      //       MaterialPageRoute(
+      //         builder: (_) => DonorRequestView(),
+      //       ),
+      //     );
+      //   },
+      //   child: const Icon(
+      //     Icons.add,
+      //   ),
+      // ),
       appBar: AppBar(
         title: const Text(
           'Donate Them',
@@ -57,11 +57,17 @@ class _DonorViewState extends State<DonorView> {
               itemBuilder: (_, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.pushReplacement(
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (_) => DonorRequestEditView(
+                    //         docid: snapshot.data!.docs[index]),
+                    //   ),
+                    // );
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => DonorRequestEditView(
-                            docid: snapshot.data!.docs[index]),
+                        builder: (_) => const BookAppointmentView(),
                       ),
                     );
                   },
