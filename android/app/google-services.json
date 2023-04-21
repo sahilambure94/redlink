@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "452964556683",
+    "project_id": "redlink-ambure",
+    "storage_bucket": "redlink-ambure.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452964556683:android:1d47588cb0b2856989d98e",
+        "android_client_info": {
+          "package_name": "com.example.redlink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452964556683-iod0favpibr344oje6p6d5gm77valruj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAm95dKLz9SlW0wdwXHy1KO50XeDayJJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452964556683-iod0favpibr344oje6p6d5gm77valruj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
